@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping(path = "/all")
-    public Iterable<User> getAllUsers() {
+    public  Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
 }
