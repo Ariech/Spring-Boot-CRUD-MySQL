@@ -3,10 +3,8 @@ package com.example.accessingdatamysql.controllers;
 import com.example.accessingdatamysql.entities.User;
 import com.example.accessingdatamysql.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.Optional;
 
 @RestController
