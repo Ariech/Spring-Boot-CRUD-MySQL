@@ -1,5 +1,6 @@
 package com.example.accessingdatamysql.controllers;
 
+import com.example.accessingdatamysql.entities.Book;
 import com.example.accessingdatamysql.entities.User;
 import com.example.accessingdatamysql.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class UserController {
     public User addNewUser(@RequestBody User user) {
         return userRepository.save(user);
     }
+
 
     @GetMapping(path = "/users")
     public  Iterable<User> getAllUsers() {
