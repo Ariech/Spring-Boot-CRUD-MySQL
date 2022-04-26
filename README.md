@@ -4,7 +4,7 @@
 
 It's a spring-boot project that has been written for the purpose of learning to develop CRUD applications. It features basic mappings, that you can access via specific endpoints. Program can be tested using Postman.
 
-## Requirments
+## Requirements
 
 - Java version 15
 - Latest version of maven (3.8.5)
