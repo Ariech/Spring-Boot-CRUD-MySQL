@@ -1,11 +1,16 @@
 # AccessingDataMySQL
 
+## Introduction
+
+It's a spring-boot project that has been written for the purpose of learning to develop CRUD applications. It features basic mappings, that you can access via specific endpoints. Program can be tested using Postman.
+
 ## Requirments
 
 - Java version 15
 - Latest version of maven (3.8.5)
-- Relational database managment system, in this project latest version of MySQL (8.0) has been used
+- Relational database management system, in this project latest version of MySQL (8.0) has been used
 - Create database named users
+- Postman application
 
 ## Setup guide
 1. Login to mysql and create database and user
@@ -26,3 +31,8 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 ```
 /mvnw spring-boot:run
 ```
+
+## Future plans
+1. Add Postman collection
+2. Create frontend
+3. Learn about Spring Security and implement it
