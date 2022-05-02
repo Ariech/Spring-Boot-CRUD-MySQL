@@ -3,6 +3,8 @@ package com.example.accessingdatamysql.repositories;
 import com.example.accessingdatamysql.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+import java.util.List;
 
+public interface UserRepository extends JpaRepository<User, Integer> {
+    List<User> findByEmail(String email);
 }

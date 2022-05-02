@@ -1,33 +1,40 @@
 package com.example.accessingdatamysql.entities;
 
+import net.minidev.json.annotate.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name = "books")
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_generator")
     private Integer id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "number_of_pages")
     private int numberOfPages;
 
+    @Column(name = "author")
     private String author;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private User user;
 
-    public Book() {
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getName() {
@@ -60,15 +67,5 @@ public class Book {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", numberOfPages=" + numberOfPages +
-                ", author='" + author + '\'' +
-                '}';
     }
 }
