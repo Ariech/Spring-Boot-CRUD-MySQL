@@ -32,7 +32,31 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 /mvnw spring-boot:run
 ```
 
+## Project architecture
+
+```
+-- accessing-data-mysql
+  |-- AccessingDataMySqlApplication.java
+  |-- controllers
+  |   |-- BookController.java
+  |   |-- UserController.java
+  |-- entities
+  |   |-- Book.java
+  |   |-- User.java
+  |-- exceptions
+  |   |-- ControllerExceptionHandler.java
+  |   |-- ErrorMessage.java
+  |   |-- ResourceNotFoundException.java
+  |-- repositories
+  |   |-- BookRepository.java
+  |   |-- UserRepository.java
+```
+
+## Postman collection
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2cdd5c955c11b958dc85?action=collection%2Fimport)
+
 ## Future plans
-1. Add Postman collection
-2. Create frontend
-3. Learn about Spring Security and implement it
+1. Add Postman collection :heavy_check_mark:
+2. Separate logic from controllers to service layer :x:
+3. Create frontend :x:
+4. Learn about Spring Security and implement it :x:
